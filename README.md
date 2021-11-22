@@ -1,2 +1,2 @@
-# mantap
-project mantap
+# MantApp
+project mantapp
