@@ -1,4 +1,5 @@
-import 'dart:ffi';
+// import 'dart:ffi';
+import 'package:ffi/ffi.dart';
 
 import 'package:app/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
