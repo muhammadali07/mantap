@@ -1,15 +1,15 @@
-from logging import debug
 from flask import Flask
+from flask_restful import  Api
 
-from config import LogActivity
+from api.user.userapp import (
+    Login as login
+    )
 
 app = Flask(__name__)
+api = Api(app)
 
-@app.route('/')
-def index():
-    LogActivity.logactivity()
-    return 'Hello World'
+api.add_resource(login, '/login')
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=1234)
