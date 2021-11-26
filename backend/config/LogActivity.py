@@ -1,7 +1,7 @@
 from loguru import logger
 
 
-from config import ProfileUser
+import ProfileUser
 
 def logactivity():
     host_name = ProfileUser.h_name
