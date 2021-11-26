@@ -1,11 +1,11 @@
 from loguru import logger
 
 
-import ProfileUser
+from .ProfileUser import h_name, ip_address, current_date
 
 def logactivity():
-    host_name = ProfileUser.h_name
-    ip = ProfileUser.ip_address
+    host_name = h_name
+    ip = ip_address
     # date = ProfileUser.current_date
     logger.add("../log/log_data.log", format="{extra[ip]} {extra[user]} {message}")
     context_logger = logger.bind(ip=f"{ip}", user=f"{host_name}")
