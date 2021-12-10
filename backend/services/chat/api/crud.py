@@ -1,16 +1,21 @@
 from flask import Response, request
 from flask_restful import Resource
-from database.model.model import Bus
+from database.model.model import (
+    Bus,
+    UserApp
+    )
 
-class Login(Resource):
-    def get(self):
-        # savedlog()
-        return {
-            'status' : 'saved login user success'
-        }
-
+class User(Resource):
     def post(self):
-        return{'This api for register user'}
+        body = request.get_json()
+        user = UserApp(**body).save()
+        id = user.id
+        return {'id': str(id)}, 200
+
+    def get(self):
+        get_data = UserApp.objects().to_json()
+        return Response(get_data, mimetype="application/json", status=200)
+   
 
 class BusesApi(Resource):
     def get(self):

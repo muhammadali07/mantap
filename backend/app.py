@@ -1,7 +1,9 @@
 from flask import Flask
 from flask_restful import  Api
+
+
 from database.db_mongo import initialize_db
-from mantap.resources.routes import initiliazed_routes
+from services.chat.resources.routes import initiliazed_routes
 
 app = Flask(__name__)
 api = Api(app)
