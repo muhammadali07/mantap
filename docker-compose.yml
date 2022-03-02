@@ -36,7 +36,7 @@ services:
 
     manage:
         build:
-            context: ./services/manage
+            context: ./be/services/manage
             dockerfile: Dockerfile
         # image: registry.gitlab.com/ihsansolusi/universal-front-end/manage
         container_name: ${CONTAINER_ID_NAME?Variable not set}-unife-manage
@@ -46,7 +46,7 @@ services:
         #command: tail -f /dev/null
         command: /start-reload.sh
         ports:
-            - ${API_HTTP_EXPOSE_PORT_manage?Variable not set}:${API_HTTP_PORT?Variable not set}
+            - ${API_HTTP_EXPOSE_PORT_MANAGE?Variable not set}:${API_HTTP_PORT?Variable not set}
         environment:
             - PROJECT_NAME=${PROJECT_NAME?Variable not set}
             # DB variable on app/config.py
@@ -66,10 +66,20 @@ services:
             - API_VERSION=${API_VERSION?Variable not set}
             - PROXY_ROOT_PATH=${PROXY_ROOT_PATH?Variable not set}
             # GCP Storage
-            - BUCKET_NAME=${BUCKET_NAME?Variable not set}
+            # - BUCKET_NAME=${BUCKET_NAME?Variable not set}
             # KEYCLOAK
-            - SERVICE_KEYCLOAK_URL=${SERVICE_KEYCLOAK_URL?Variable not set}
-            - SERVICE_KEYCLOAK_REALM=${SERVICE_KEYCLOAK_REALM?Variable not set}
-            - SERVICE_KEYCLOAK_CLIENT_ID=${SERVICE_KEYCLOAK_CLIENT_ID?Variable not set}
-            - SERVICE_KEYCLOAK_USERNAME=${SERVICE_KEYCLOAK_USERNAME?Variable not set}
-            - SERVICE_KEYCLOAK_PASSWORD=${SERVICE_KEYCLOAK_PASSWORD?Variable not set}
+            # - SERVICE_KEYCLOAK_URL=${SERVICE_KEYCLOAK_URL?Variable not set}
+            # - SERVICE_KEYCLOAK_REALM=${SERVICE_KEYCLOAK_REALM?Variable not set}
+            # - SERVICE_KEYCLOAK_CLIENT_ID=${SERVICE_KEYCLOAK_CLIENT_ID?Variable not set}
+            # - SERVICE_KEYCLOAK_USERNAME=${SERVICE_KEYCLOAK_USERNAME?Variable not set}
+            # - SERVICE_KEYCLOAK_PASSWORD=${SERVICE_KEYCLOAK_PASSWORD?Variable not set}
+
+
+volumes:
+    postgre_data:
+
+networks:
+    default:
+        external:
+            name: ${PROJECT_NETWORK?Variable not set}
+
