@@ -1,17 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+import './assets/css/App.css'
 
-import "@fortawesome/fontawesome-free/css/all.min.css";
-
-import Login from "views/Login.js";
+import App from "./App";
 
 ReactDOM.render(
-  <BrowserRouter>
-    <Switch>
-      <Route path="/login" component={Login} />
-      <Redirect from="/" to="/login" />
-    </Switch>
-  </BrowserRouter>,
+  <App />,
   document.getElementById("root")
 );
