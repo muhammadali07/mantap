@@ -126,12 +126,12 @@ function App() {
                 </label>
               </div>
               <div class='flex justify-center'>
-                <button type="submit" class="w-1/2 flex justify-center py-4 border border-transparent rounded-full shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Sign up</button>
+                <button type="submit" class="w-full flex justify-center py-4 border border-transparent rounded-full shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Sign up</button>
               </div>
               <div className='mt-2 sm:mx-auto sm:w-full sm:max-w-md'>
                 <p class="mt-2 text-center text-sm text-gray-600 max-w">Or Sign Up with :</p>
               </div>
-              <div class="p-4 bg-gray-300 rounded-full flex items-center justify-between space-x-8">
+              <div class="p-4 bg-gray-200 rounded-full flex items-center justify-between space-x-8">
                 <div class="flex-1 grid grid-cols-4 gap-4">
                   {/* <div class="h-4 w-44 bg-gray-300 rounded"></div> */}
                   <button><img class="mx-auto h-12 w-auto" src={icons8_google} alt="Google" /></button>
