@@ -1,0 +1,8 @@
+include: '/template.yml'
+
+variables:
+  SERVICE_DIR: services/manage
+  DEPLOYMENT: manage
+  IMAGE_NAME: manage
+  CONTAINER_NAME: manage
+#test
